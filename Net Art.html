@@ -1,0 +1,39 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function setup() {
+         var canvas = document.getElementById("scrawl");
+         var ctx = canvas.getContext("2d");
+         ctx.fillStyle = "rgb(255, 0, 0)";
+     ctx.fillRect (10, 10, 60, 60);
+    }
+var interval;
+var width, height;
+var x, y;
+
+function setup() {
+    width = 720;
+    height = 180;
+    canvas = document.getElementById("scrawl");
+    ctx = canvas.getContext("2d");
+    x = 0;
+    y = 10;
+    interval = setInterval(draw, 50);
+}
+
+function draw() {
+    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
+    ctx.fillRect (0, 0, width, height);
+
+    x += 5;
+    if (x > width) { x = 0; }
+    ctx.fillStyle = "rgb(255, 0, 0)";
+    ctx.fillRect (x, y, 60, 60);
+}
+  </script>
+ </head>
+ <body onload="setup()">
+   <canvas id="scrawl" width="720" height="180"></canvas>
+ </body>
+</html>
+    
